@@ -1,4 +1,5 @@
 require('colors')
+
 const {
   inquiererMenu,
   pause,
@@ -13,8 +14,10 @@ const main = async() => {
 
   do {
 
+    // Imprimir el menú
     opt = await inquiererMenu()
     
+    // Valida las opciones seleccionadas en el menú anterior
     switch (opt) {
       case 1:
         const desc = await readInput('Descripción:')
@@ -22,7 +25,7 @@ const main = async() => {
         break
       
       case 2:
-        console.log(tasks._list)
+        console.log(tasks.listArr)
         break
     }
     
