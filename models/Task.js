@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 
-class Tarea {
+class Task {
   constructor(desc) {
     this.id = uuidv4()
     this.desc = desc
@@ -8,4 +8,4 @@ class Tarea {
   }
 }
 
-module.exports = Tarea
+module.exports = Task
