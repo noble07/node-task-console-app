@@ -5,13 +5,21 @@ const {
   pause,
   readInput
 } = require('./helpers/inquirer')
-const { saveDB } = require('./helpers/saveFile')
+const { saveDB, readDB } = require('./helpers/saveFile')
 const Tasks = require('./models/Tasks')
 
 const main = async() => {
   
   let opt = ''
   const tasks = new Tasks()
+
+  const tasksDB = readDB()
+
+  if (tasksDB) {
+    // Establecer las tareas
+  }
+
+  await pause()
 
   do {
 
