@@ -5,6 +5,7 @@ const {
   pause,
   readInput
 } = require('./helpers/inquirer')
+const { saveDB } = require('./helpers/saveFile')
 const Tasks = require('./models/Tasks')
 
 const main = async() => {
@@ -28,6 +29,8 @@ const main = async() => {
         console.log(tasks.listArr)
         break
     }
+
+    // saveDB(tasks.listArr)
     
     await pause()
 
