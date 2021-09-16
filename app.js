@@ -12,14 +12,11 @@ const main = async() => {
   
   let opt = ''
   const tasks = new Tasks()
-
   const tasksDB = readDB()
 
   if (tasksDB) {
-    // Establecer las tareas
+    tasks.loadTasksFromArr(tasksDB)
   }
-
-  await pause()
 
   do {
 
@@ -38,7 +35,7 @@ const main = async() => {
         break
     }
 
-    // saveDB(tasks.listArr)
+    saveDB(tasks.listArr)
     
     await pause()
 

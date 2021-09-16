@@ -9,6 +9,12 @@ class Tasks {
     return Object.values(this._list)
   }
 
+  loadTasksFromArr(tasks = []) {
+    tasks.forEach(task => {
+      this._list[task.id] = task
+    });
+  }
+
   createTask(desc = '') {
     const task = new Task(desc)
     this._list[task.id] = task
