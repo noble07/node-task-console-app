@@ -27,13 +27,11 @@ class Tasks {
   }
 
   fullList() {
-
     console.log()
 
     this.listArr.forEach(({desc, finishAt}, index) => {
       console.log(`${((index+1) + '.').green} ${desc} :: ${ finishAt ? 'Completado'.green : 'Pendiente'.red }`)
     })
-
   }
 
   listPendingCompleted(completed = true) {
@@ -47,7 +45,21 @@ class Tasks {
     })
   }
 
+  toggleCompleted(ids = []) {
+    ids.forEach(id => {
+      const task = this._list[id]
+      if (!task.finishAt) {
+        task.finishAt = new Date().toISOString()
+      }
+    })
 
+    this.listArr.forEach(task => {
+      if (!ids.includes(task.id)) {
+        this._list[task.id].finishAt = null
+      }
+    })
+
+  }
 
 }
 
