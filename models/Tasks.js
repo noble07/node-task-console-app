@@ -1,5 +1,3 @@
-const colors = require('colors')
-
 const Task = require('./Task')
 class Tasks {
   
@@ -9,6 +7,12 @@ class Tasks {
   
   get listArr() {
     return Object.values(this._list)
+  }
+
+  deleteTask( id = '' ) {
+    if (this._list[id]) {
+      delete this._list[id]
+    }
   }
 
   loadTasksFromArr(tasks = []) {
@@ -41,8 +45,9 @@ class Tasks {
       const estado = finishAt !== null ? finishAt.toString().green : 'Pendiente'.red
       console.log(`${((index+1) + '.').green} ${desc} :: ${estado}`)
     })
-    
   }
+
+
 
 }
 
