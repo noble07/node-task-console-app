@@ -31,7 +31,15 @@ const main = async() => {
         break
       
       case 2:
-        console.log(tasks.listArr)
+        tasks.fullList()
+        break
+
+      case 3:
+        tasks.listPendingCompleted()
+        break
+
+      case 4:
+        tasks.listPendingCompleted(false)
         break
     }
 
